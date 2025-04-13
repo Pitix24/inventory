@@ -1,0 +1,91 @@
+/* 🌐 Contenedor general */
+.users-container {
+    width: 100%;
+    height: 100vh;
+    background-color: #F0F5FA;
+    color: #2c3e50;
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* ✅ Sidebar abierto */
+  .sidebar-open .users-container {
+    width: 100%;
+  }
+
+  
+  /* 📦 Caja principal */
+  .users-wrapper {
+    max-width: 1400px;
+    width: 80%;
+    height: auto;
+    background: white;
+    padding: 20px;
+    margin-left: 40px;
+    margin-top: 40px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 🧑‍💼 Header */
+  .users-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .users-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .add-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* 📱 Responsive */
+  @media (max-width: 1024px) {
+    .sidebar-closed .users-container {
+      width: 100vw;
+      margin-left: 0;
+    }
+  
+    .users-wrapper {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .users-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+  
+    .search-bar {
+      width: 100%;
+    }
+  
+    .users-wrapper {
+      width: 80%;
+      max-width: 100%;
+      margin-top: 100px;
+
+    }
+  
+    .table th,
+    .table td {
+      padding: 8px;
+      font-size: 0.9rem;
+    }
+  
+    .add-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  

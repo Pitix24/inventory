@@ -1,0 +1,62 @@
+/* 🔍 Contenedor del buscador */
+.search-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔥 Contenedor del input con icono */
+.search-input-container {
+    position: relative;
+}
+
+/* ✏️ Input de búsqueda */
+.search-input {
+    width: 150px;
+    padding: 10px 0px 10px 40px;
+    border-radius: 9999px;
+    border: solid 1px #333;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    opacity: 0.8;
+    font-size: 1rem;
+    
+
+}
+
+/* 🔍 Ícono de búsqueda */
+.search-input-container .search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    fill: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto al enfocar el input */
+.search-input:focus {
+    opacity: 1;
+    width: 250px;
+    border-color: #1e3a5f;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+    .search-wrapper {
+        max-width: 300px;
+    }
+
+    .search-input {
+        width: 120px;
+        text-overflow: ellipsis;
+    }
+
+    .search-input:focus {
+        width: 200px;
+    }
+}

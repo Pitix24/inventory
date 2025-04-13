@@ -1,0 +1,108 @@
+/* 🔷 Contenedor del Header */
+.header-container {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    height: auto;
+    min-height: 100px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🟣 Título principal */
+.header-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 🔹 Subtítulo opcional */
+.header-subtitle {
+    font-size: 1rem;
+    color: #7f8c8d;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* 🟢 Botón de agregar */
+.add-btn-header {
+    background: #1A6EC1;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.add-btn-header:hover {
+    background: #176174;
+}
+
+/* 📌 Estilos para el Search */
+.header-search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+/* 📱 Responsive - Tablets */
+@media (max-width: 1024px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .header-search {
+        width: 100%;
+        justify-content: center;
+        margin-left: 0;
+    }
+
+    .add-btn-header {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* 📱 Responsive - Móviles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .header-title {
+        font-size: 1.8rem;
+    }
+
+    .header-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .add-btn-header {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+        max-width: 180px;
+    }
+}
