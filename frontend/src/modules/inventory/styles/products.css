@@ -1,0 +1,83 @@
+/* 🎯 Contenedor Principal */
+.products-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #F0F5FA;
+  color: #2c3e50;
+  transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ✅ Sidebar ABIERTO */
+.sidebar-open .products-container {
+  width: 100%;
+}
+
+/* 📌 Contenedor de la gestión de productos */
+.product-wrapper {
+  max-width: 1400px;
+  width: 80%;
+  height: auto;
+  background: white;
+  padding: 20px;
+  margin-left: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🎯 Encabezado con búsqueda */
+.products-header {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.products-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+}
+/* 📱 Responsive */
+@media (max-width: 1024px) {
+  .sidebar-closed .products-container {
+    width: 100vw;
+    margin-left: 0;
+  }
+
+  .product-wrapper {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+
+  .product-wrapper {
+    width: 80%;
+    max-width: 100%;
+    margin-top: 90px;
+  }
+
+  .product-list th,
+  .product-list td {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .add-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

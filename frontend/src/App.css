@@ -1,0 +1,40 @@
+/* 🎨 Contenedor Principal */
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🎯 Contenido Principal */
+.content-container {
+    flex-grow: 1;
+    background: #f4f4f4;
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ Sidebar ABIERTO (260px) */
+.sidebar-open .content-container {
+    margin-left: 260px;
+    width: calc(100vw - 260px);
+}
+
+/* ✅ Sidebar CERRADO (solo íconos, 80px) */
+.sidebar-closed .content-container {
+    margin-left: 80px;
+    width: calc(100vw - 80px);
+}
+
+/* 📱 RESPONSIVE: En móviles, el sidebar desaparece y solo queda el botón */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar-open .content-container,
+    .sidebar-closed .content-container {
+        width: 100%;
+        margin-left: 0;
+    }
+}

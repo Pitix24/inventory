@@ -1,0 +1,219 @@
+/* 🔥 Botón flotante SIEMPRE visible */
+.menu-icon {
+    position: fixed;
+    top: 15px;
+    left: 35px;
+    cursor: pointer;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    z-index: 1100;
+    font-size: 1.5rem;
+}
+
+/* 🟢 Sidebar Principal */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background: #FFFFFF;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
+    box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+/* ✅ Sidebar expandido */
+.sidebar.expanded {
+    width: 260px;
+}
+
+/* ❌ Sidebar colapsado (solo iconos) */
+.sidebar.collapsed {
+    width: 80px;
+    align-items: center;
+}
+
+/* 📌 Logo o Texto en el Sidebar */
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 60px;
+    color: rgb(0, 0, 0);
+}
+
+.sidebar-logo {
+    width: 50px;
+    height: 50px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto en el logo */
+.sidebar.expanded .sidebar-logo {
+    transform: scale(1.1);
+}
+
+/* 📌 Ocultar texto en modo colapsado */
+.sidebar.collapsed .sidebar-header h2,
+.sidebar.collapsed .user-info,
+.sidebar.collapsed .sidebar-menu ul li span {
+    display: none;
+}
+
+/* 🟢 Información del Usuario */
+.user-info {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Nombre del usuario */
+.user-info p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Color especial para el nombre del usuario */
+.user-info strong {
+    color: #000000;
+}
+
+/* 📌 Efecto hover en usuario */
+.user-info:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+/* 📌 Estilos del Menú */
+.sidebar-menu {
+    margin-top: 20px;
+}
+
+.sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Elementos del Menú */
+.sidebar-menu ul li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+/* 📌 Enlaces del Menú */
+.sidebar-menu ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+/* 🟢 Efecto hover en el menú */
+.sidebar-menu ul li:hover {
+    background: rgba(34, 32, 32, 0.2);
+    transform: scale(1.05);
+}
+
+/* 🟢 Efecto de fondo en enlaces activos */
+.sidebar-menu ul li a.active {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.08);
+}
+
+/* 🎯 Iconos */
+.icon {
+    font-size: 1.3rem;
+    transition: color 0.3s ease-in-out;
+}
+
+/* 🟢 Cambio de color en hover */
+.sidebar-menu ul li:hover .icon {
+    color: #302e30;
+}
+
+/* 🟥 Botón de Cerrar Sesión */
+.logout-container {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.logout-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff4d4d, #d63031);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease-in-out;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.logout-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+
+/* 📱 Estilos Responsivos (Modo Móvil) */
+@media (max-width: 768px) {
+    /* El Sidebar se oculta completamente en móvil */
+    .sidebar {
+        width: 0;
+        transform: translateX(-100%);
+        display: none;
+        overflow: hidden;
+        z-index: 1000;
+    }
+
+    /* Cuando se abre en móvil, ocupa toda la pantalla */
+    .sidebar.expanded {
+        width: 94%;
+        display: flex;
+        transform: translateX(0);
+        justify-content: flex-start;
+        height: 100vh;
+    }
+
+    /* 🟢 El botón del menú SIEMPRE visible en móviles */
+    .menu-icon {
+        left: 15px;
+        top: 15px;
+        color: rgb(0, 0, 0);
+        z-index: 1200;
+    }
+}
