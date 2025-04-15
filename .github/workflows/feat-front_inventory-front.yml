@@ -35,14 +35,14 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          cd frontend/build
+          cd frontend/dist
           zip -r release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: react-app
-          path: frontend/build/release.zip
+          path: frontend/dist/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -76,4 +76,4 @@ jobs:
         with:
           app-name: 'inventory-front'
           slot-name: 'Production'
-          package: frontend/build
+          package: frontend/dist
