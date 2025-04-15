@@ -8,7 +8,7 @@ import {
   updateProducto,
   deleteProducto,
 } from "../services/api";
-import "../styles/Products.css";
+import "../styles/products.css";
 
 const ProductsPage = () => {
   const [productos, setProductos] = useState([]);
