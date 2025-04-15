@@ -76,4 +76,5 @@ jobs:
         with:
           app-name: 'inventory-front'
           slot-name: 'Production'
-          package: frontend/build
+          package: frontend/dist/release.zip
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISH_PROFILE_33413FE3126D4B84B6ED76BE5761AF00 }}
