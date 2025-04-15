@@ -23,20 +23,27 @@ jobs:
         with:
           node-version: '22.x'
 
-      - name: npm install, build, and test
+      - name: Navigate to backend folder and install dependencies
         run: |
+          cd backend
           npm install
+
+      - name: Build and test the backend
+        run: |
+          cd backend
           npm run build --if-present
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
+        run: |
+          cd backend
+          zip -r release.zip .
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: release.zip
+          path: backend/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -71,4 +78,3 @@ jobs:
           app-name: 'inventory-pitix'
           slot-name: 'Production'
           package: .
-          
